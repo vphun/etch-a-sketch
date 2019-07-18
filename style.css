@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+}
+.container {
+    display: grid;
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+    grid: repeat(16, auto) / repeat(16, auto);
+    margin: 0 auto;
+}
+
+.cell {
+    border: 1px solid purple;
+}
