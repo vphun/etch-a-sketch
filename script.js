@@ -1,15 +1,18 @@
+let gridSize = 16;
+
 const container = document.querySelector(".container");
-let color = container.classList[1];
 container.addEventListener("mouseover", (e)=>{    
     if (e.target.classList[0] == "cell") {
         e.target.classList.remove(`${color}`);  // reveal container background after hovering
     }
 });
 
+let color = container.classList[1];
+
 const resetBtn = document.querySelector("#clear");
 resetBtn.addEventListener("click", ()=>{
-    let dimensions = prompt("How many squares per side?");
-    resetGrid(dimensions);
+    gridSize = prompt("How many squares per side?");
+    resetGrid(gridSize);
 });
 
 const colorBtns = document.querySelectorAll(".colors button");
@@ -17,7 +20,8 @@ colorBtns.forEach(button=>button.addEventListener("click", (e)=>{
     changeColors(e.target.className);
 }));
 
-resetGrid(16);
+// initialize grid
+resetGrid(gridSize);
 
 function generateCells(dimensions) {
     for (i = 0; i < dimensions**2; i++) {
@@ -38,8 +42,10 @@ function resetGrid(dimensions) {
 
 function changeColors(newColor) {
     let cells = document.querySelectorAll(".cell");
+
     container.classList.remove(`${color}`);
     container.classList.add(`${newColor}`);
+
     cells.forEach(cell=>{
         if (cell.className != "cell") {
             cell.classList.remove(`${color}`);
