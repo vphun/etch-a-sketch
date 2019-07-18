@@ -2,18 +2,35 @@ body {
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+button {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 25px;
+    margin: 15px 10px;
+    padding: 5px 5px;
+}
+
+.game {
+    background-color: red;
+    width: 725px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
 .container {
     display: grid;
-    border: 50px solid red;
-    border-radius: 20px;
+    grid: repeat(16, auto) / repeat(16, auto);
     width: 600px;
     height: 600px;
-    grid: repeat(16, auto) / repeat(16, auto);
-    margin: 0 auto;
+    border: 1px solid gray;
+    margin: 0px auto;
 }
 
 .container.rainbow {
     background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    background-color: purple;
 }
 
 .container.classic {
