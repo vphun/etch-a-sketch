@@ -1,15 +1,39 @@
 body {
     text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .container {
     display: grid;
-    border: 1px solid black;
+    border: 50px solid red;
+    border-radius: 20px;
     width: 600px;
     height: 600px;
     grid: repeat(16, auto) / repeat(16, auto);
     margin: 0 auto;
 }
 
-.cell {
-    border: 1px solid purple;
+.container.rainbow {
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+.container.classic {
+    background-color: black;
+}
+
+.cell.rainbow {
+    background-color: black;
+}
+
+.cell.classic {
+    background-color: silver;
+}
+
+.container.daisy {
+    background: url('daisy.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.cell.daisy {
+    background-color: black;
 }
